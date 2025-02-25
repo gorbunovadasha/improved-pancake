@@ -1,0 +1,631 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@600" />
+
+    <meta charset="UTF-8" />
+
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+    <!--[if !mso]><!-->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!--<![endif]-->
+
+    <meta name="x-apple-disable-message-reformatting" />
+
+    <style>
+      .main-content-wrapper {
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: flex-start;
+        min-width: 1920px;
+        background: #f7fafc;
+      }
+      .card-container {
+        box-sizing: border-box;
+        flex: 0 0 auto;
+        background: white;
+        border-radius: 20px;
+        box-shadow: 0px 5px 14px rgba(0, 0, 0, 0.05);
+      }
+      .vertical-image-gallery {
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        justify-content: flex-start;
+      }
+      .image-gallery-container {
+        box-sizing: border-box;
+        display: flex;
+        flex: 0 0 auto;
+        flex-direction: row;
+        gap: 48px;
+        align-items: center;
+        align-self: center;
+        justify-content: flex-start;
+        padding: 342px 28px 119px;
+      }
+      .image-grid-item {
+        box-sizing: border-box;
+        display: block;
+        width: 66px;
+        max-width: initial;
+        height: 27px;
+        border: none;
+        object-fit: cover;
+      }
+      .image-container-styled {
+        box-sizing: border-box;
+        display: block;
+        flex: 0 0 auto;
+        max-width: initial;
+        height: 8px;
+        border: none;
+        object-fit: cover;
+      }
+      .vertical-layout-container {
+        box-sizing: border-box;
+        width: 100%;
+        margin-top: 519px;
+      }
+      .image-container {
+        box-sizing: border-box;
+        display: block;
+        width: 100%;
+        max-width: initial;
+        height: 8px;
+        border: none;
+        object-fit: cover;
+      }
+      .header-container {
+        box-sizing: border-box;
+        width: 100%;
+        height: 117px;
+        padding-top: 25.5px;
+        padding-right: 15px;
+        padding-left: 15px;
+      }
+      .svg-container {
+        display: flex;
+        width: 32px;
+        height: 32px;
+        color: #ea850f;
+      }
+      .homework-dashboard-container {
+        display: flex;
+        flex: 1 0 auto;
+        flex-direction: column;
+        align-items: stretch;
+        justify-content: flex-start;
+        margin-left: -363px;
+      }
+      .dashboard-container {
+        box-sizing: border-box;
+        display: flex;
+        flex: 0 0 auto;
+        flex-direction: row;
+        align-items: center;
+        justify-content: flex-end;
+        max-width: initial;
+        height: 922px;
+        padding: 39px 47px 555px;
+        background: url("assets/image_fdfe8a23.png") 50% / cover no-repeat;
+      }
+      .task-summary-container1 {
+        display: flex;
+        flex: 0 0 auto;
+        flex-direction: column;
+        align-items: stretch;
+        justify-content: center;
+        margin-right: 135px;
+      }
+      .task-summary-container {
+        display: flex;
+        flex: 0 0 auto;
+        flex-direction: row;
+        align-items: flex-start;
+        justify-content: flex-start;
+      }
+      .homework-title {
+        flex: 0 0 auto;
+        padding: 0;
+        padding-top: 4px;
+        margin: 0;
+        font: 600 32px Inter, sans-serif;
+        color: #64647b;
+      }
+      .homework-title-text-style {
+        flex: 0 0 auto;
+        padding: 0;
+        padding-bottom: 9.5px;
+        margin: 0;
+        margin-left: 208px;
+        font: 600 32px Inter, sans-serif;
+        color: #747489;
+      }
+      .task-summary-widget {
+        flex: 0 0 auto;
+        margin-top: 30.5px;
+      }
+      .task-stats-container {
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: row;
+        gap: 8px;
+        align-items: flex-start;
+        justify-content: space-between;
+        width: 100%;
+        padding-right: 116px;
+      }
+      .total-tasks-text-style {
+        flex: 0 0 auto;
+        padding: 0;
+        padding-bottom: 11.5px;
+        margin: 0;
+        font: 600 40px Inter, sans-serif;
+        color: #565770;
+      }
+      .total-tasks-text-style1 {
+        flex: 0 0 auto;
+        padding: 0;
+        padding-top: 20px;
+        margin: 0;
+        margin-left: 6.5px;
+        font: 600 24px Inter, sans-serif;
+        color: #9d9fa5;
+      }
+      .test-count-display-style {
+        box-sizing: border-box;
+        flex: 0 0 auto;
+        width: 82px;
+        padding: 0;
+        padding-bottom: 9px;
+        margin: 0;
+        font: 600 40px Inter, sans-serif;
+        color: #54556f;
+        text-align: center;
+      }
+      .total-tests-label {
+        flex: 0 0 auto;
+        padding: 0;
+        padding-top: 20.5px;
+        margin: 0;
+        margin-left: -2px;
+        font: 600 24px Inter, sans-serif;
+        color: #9fa1a7;
+      }
+      .vertical-spacing-container {
+        margin-top: 24px;
+      }
+      .parent-container-flex-row {
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+        justify-content: flex-start;
+      }
+      .horizontal-flex-container {
+        display: flex;
+        flex: 0 0 auto;
+        flex-direction: row;
+        align-items: center;
+        justify-content: flex-start;
+      }
+      .card-container3 {
+        box-sizing: border-box;
+        flex: 0 0 auto;
+        width: 166px;
+        height: 53px;
+        background: #f3f4f8;
+      }
+      .card-container1 {
+        box-sizing: border-box;
+        flex: 0 0 auto;
+        width: 166px;
+        height: 53px;
+        margin-left: 22px;
+        background: #f3f4f8;
+      }
+      .header-button {
+        box-sizing: border-box;
+        flex: 0 0 auto;
+        width: 166px;
+        height: 53px;
+        margin-left: 334px;
+        background: #f3f4f8;
+      }
+      .flex-container-with-top-margin {
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+        justify-content: flex-start;
+        margin-top: 6px;
+      }
+      .horizontal-flex-container1 {
+        display: flex;
+        flex: 0 0 auto;
+        flex-direction: row;
+        align-items: flex-start;
+        justify-content: flex-start;
+        margin-left: 146px;
+      }
+      .inner-content-wrapper {
+        flex: 0 0 auto;
+        padding-top: 3px;
+      }
+      .card-container2 {
+        box-sizing: border-box;
+        width: 166px;
+        height: 53px;
+        background: #f3f4f8;
+      }
+      .nested-content-wrapper {
+        flex: 0 0 auto;
+        padding-bottom: 3px;
+        margin-left: 22px;
+      }
+      .calendar-container {
+        box-sizing: border-box;
+        display: flex;
+        flex: 0 0 auto;
+        flex-direction: column;
+        align-items: stretch;
+        align-self: flex-start;
+        justify-content: flex-start;
+        width: 444px;
+      }
+      .calendar-container1 {
+        box-sizing: border-box;
+        display: flex;
+        flex: 0 0 auto;
+        flex-direction: column;
+        align-items: stretch;
+        justify-content: center;
+        padding: 11px 16px 43px;
+        background: white;
+        border-radius: 13px;
+        box-shadow: 0px 10px 60px rgba(0, 0, 0, 0.1);
+      }
+      .calendar-header-container {
+        box-sizing: border-box;
+        display: flex;
+        flex: 0 0 auto;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        height: 38px;
+        padding-top: 7px;
+        padding-bottom: 7px;
+      }
+      .flex-row-with-icon {
+        box-sizing: border-box;
+        display: flex;
+        flex: 0 0 auto;
+        flex-direction: row;
+        gap: 8px;
+        align-items: center;
+        justify-content: flex-start;
+        overflow: hidden;
+      }
+      .monthly-heading-text-style {
+        flex: 0 0 auto;
+        padding: 0;
+        margin: 0;
+        font: 600 20px SF Pro Display, -apple-system, system-ui, BlinkMacSystemFont, sans-serif;
+        color: #ff3b30;
+        letter-spacing: 0.38px;
+      }
+      .svg-container1 {
+        box-sizing: border-box;
+        display: flex;
+        flex: 0 0 auto;
+        width: 6.75px;
+        height: 11.5px;
+        color: #ff3b30;
+      }
+      .flex-row-container {
+        box-sizing: border-box;
+        display: flex;
+        flex: 0 0 auto;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        width: 51px;
+      }
+      .svg-container2 {
+        box-sizing: border-box;
+        display: flex;
+        flex: 0 0 auto;
+        width: 10px;
+        height: 17.5px;
+        color: #ff3b30;
+      }
+      .calendar-weekdays-container {
+        box-sizing: border-box;
+        display: flex;
+        flex: 0 0 auto;
+        flex-direction: row;
+        align-items: flex-start;
+        justify-content: space-between;
+        margin-top: 7px;
+      }
+      .day-of-week-container {
+        box-sizing: border-box;
+        display: flex;
+        flex: 0 0 auto;
+        flex-direction: column;
+        align-items: stretch;
+        justify-content: center;
+        width: 32px;
+        height: 18px;
+      }
+      .day-of-week-label-style {
+        flex: 0 0 auto;
+        padding: 0;
+        margin: 0;
+        font: 600 13px SF Pro Text, -apple-system, system-ui, BlinkMacSystemFont, sans-serif;
+        color: rgba(60, 60, 67, 0.3);
+        letter-spacing: -0.08px;
+      }
+      .vertical-align-center-bottom {
+        box-sizing: border-box;
+        display: flex;
+        flex: 0 0 auto;
+        flex-direction: column;
+        align-items: flex-end;
+        justify-content: center;
+        width: 32px;
+        height: 18px;
+      }
+      .flex-center-column {
+        box-sizing: border-box;
+        display: flex;
+        flex: 0 0 auto;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 32px;
+        height: 18px;
+      }
+      .vertical-number-grid-container {
+        display: flex;
+        flex: 0 0 auto;
+        flex-direction: column;
+        align-items: stretch;
+        justify-content: center;
+        margin-top: 10px;
+      }
+      .horizontal-flex-container2 {
+        box-sizing: border-box;
+        display: flex;
+        flex: 0 0 auto;
+        flex-direction: row;
+        align-items: flex-start;
+        justify-content: space-between;
+        padding-top: 10px;
+        padding-bottom: 10px;
+      }
+      .grid-item-with-text {
+        box-sizing: border-box;
+        flex: 0 0 auto;
+        width: 32px;
+        height: 32px;
+      }
+      .number-square-container {
+        box-sizing: border-box;
+        display: inline-flex;
+        flex: 0 0 auto;
+        align-items: center;
+        justify-content: center;
+        width: 32px;
+        height: 32px;
+        padding: 0 -1.25px;
+        font: 400 20px SF Pro Display, -apple-system, system-ui, BlinkMacSystemFont, sans-serif;
+        color: #ff3b30;
+        text-align: center;
+        letter-spacing: 0.38px;
+        border: none;
+      }
+      .horizontal-number-list {
+        box-sizing: border-box;
+        display: flex;
+        flex: 0 0 auto;
+        flex-direction: row;
+        align-items: flex-start;
+        justify-content: space-between;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        margin-top: -4px;
+      }
+      .highlighted-circle-badge {
+        box-sizing: border-box;
+        display: inline-flex;
+        flex: 0 0 auto;
+        align-items: center;
+        justify-content: center;
+        width: 32px;
+        height: 32px;
+        padding: 0 -1.25px;
+        font: 600 20px SF Pro Display, -apple-system, system-ui, BlinkMacSystemFont, sans-serif;
+        color: white;
+        text-align: center;
+        letter-spacing: 0.38px;
+        background: #ff3b30;
+        border: none;
+        border-radius: 100px;
+      }
+      .flex-date-container {
+        box-sizing: border-box;
+        display: flex;
+        flex: 0 0 auto;
+        flex-direction: row;
+        align-items: flex-start;
+        justify-content: space-between;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        margin-top: -47px;
+        margin-right: 16px;
+        margin-left: 16px;
+      }
+      .vertical-align-bottom-flex-container {
+        box-sizing: border-box;
+        display: flex;
+        flex: 0 0 auto;
+        flex-direction: column;
+        align-items: flex-end;
+        justify-content: flex-start;
+        padding-top: 26.5px;
+        padding-right: 32px;
+        padding-left: 32px;
+      }
+      .image-container1 {
+        box-sizing: border-box;
+        display: block;
+        flex: 0 0 auto;
+        width: 1497px;
+        max-width: initial;
+        height: 234px;
+      }
+    </style>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  </head>
+  <body>
+    <div style="display: inline-block; width: 1920px" data-ignore="used only for top most containter width">
+      <div class="main-content-wrapper">
+        <div class="card-container">
+          <div class="vertical-image-gallery">
+            <div class="image-gallery-container">
+              <img src="assets/image_d2e25fe6.png" class="image-grid-item" />
+              <img src="assets/image_d2e25fe6.png" class="image-grid-item" />
+              <img src="assets/image_d2e25fe6.png" class="image-grid-item" />
+            </div>
+            <img src="https://s3-alpha-sig.figma.com/img/8730/0f0f/4fdd639847521979fcbc2e942300c71d?Expires=1741564800&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=Uqy~qj8RoALQxV3I19v7L0HDS645~9E2dnoFpskWngC-woC-aPTfKK6pcuksudsT4U-83EyURw~bdHjyMck3sqz3v-pawdSXrpOJXWSow4ddvR2myLU6gmnBEkT1liot3w4zlUDz22D5LiMOck3hh-qp7b2-FranEerm0KFnnpbbjlx1SVFVmDAlh0NDvBuP-38R6B5AP4G0njewdEAmZZzNU1j3nzjQCxObUxHThWqAaQTpZXMYNTEHZbEN7zAP19xBibyJjh5Jc393Qjpxxr27AC1A48vMwiBZSaP8PklnW6glqK0~reLPX1UX7UD0j9P0ZY1mll04~CFjTTIbUQ__" class="image-container-styled" />
+          </div>
+          <div class="vertical-layout-container">
+            <img src="https://s3-alpha-sig.figma.com/img/8730/0f0f/4fdd639847521979fcbc2e942300c71d?Expires=1741564800&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=Uqy~qj8RoALQxV3I19v7L0HDS645~9E2dnoFpskWngC-woC-aPTfKK6pcuksudsT4U-83EyURw~bdHjyMck3sqz3v-pawdSXrpOJXWSow4ddvR2myLU6gmnBEkT1liot3w4zlUDz22D5LiMOck3hh-qp7b2-FranEerm0KFnnpbbjlx1SVFVmDAlh0NDvBuP-38R6B5AP4G0njewdEAmZZzNU1j3nzjQCxObUxHThWqAaQTpZXMYNTEHZbEN7zAP19xBibyJjh5Jc393Qjpxxr27AC1A48vMwiBZSaP8PklnW6glqK0~reLPX1UX7UD0j9P0ZY1mll04~CFjTTIbUQ__" class="image-container" />
+            <div class="header-container">
+              <div class="svg-container">
+                <svg viewBox="0 0 32 32" x="0" y="0" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <g id="ico-/-24-/-ui-/-settings" xmlns="http://www.w3.org/2000/svg">
+                    <path id="Icon-color" d="M28,19.7601l-1.0667,-0.91c-0.6467,-0.55 -1.0025,-1.39 -0.96,-2.26c0,-0.19 0,-0.4 0,-0.59c0,-0.19 0,-0.4 0,-0.59c-0.0425,-0.87 0.3133,-1.71 0.96,-2.26l1.0667,-0.91c0.5061,-0.43 0.6414,-1.17 0.32,-1.75l-1.5467,-2.76c-0.3278,-0.57 -1.0077,-0.82 -1.6133,-0.59l-1.3333,0.5c-0.7869,0.3 -1.6663,0.2 -2.3734,-0.26c-0.3134,-0.23 -0.6433,-0.43 -0.9866,-0.6c-0.7503,-0.39 -1.2744,-1.14 -1.4134,-1.99l-0.2266,-1.38c-0.1057,-0.68 -0.6729,-1.17 -1.3334,-1.16h-3.0666c-0.6606,-0.01 -1.2277,0.48 -1.3334,1.16l-0.2266,1.38c-0.1274,0.84 -0.6303,1.58 -1.36,1.99c-0.3434,0.17 -0.6733,0.37 -0.9867,0.6c-0.7071,0.46 -1.5865,0.56 -2.3733,0.26l-1.3334,-0.5c-0.5979,-0.22 -1.2613,0.03 -1.5866,0.59l-1.5467,2.76c-0.3214,0.58 -0.1861,1.32 0.32,1.75l1.0667,0.91c0.6467,0.55 1.0025,1.39 0.96,2.26c0,0.19 0,0.4 0,0.59c0,0.19 0,0.4 0,0.59c0.0425,0.87 -0.3133,1.71 -0.96,2.26l-1.0667,0.91c-0.5061,0.43 -0.6414,1.17 -0.32,1.75l1.5467,2.76c0.3278,0.57 1.0076,0.82 1.6133,0.59l1.3333,-0.5c0.7869,-0.3 1.6663,-0.2 2.3734,0.26c0.3134,0.23 0.6433,0.43 0.9866,0.6c0.7503,0.39 1.2744,1.14 1.4134,1.99l0.2266,1.38c0.1057,0.68 0.6728,1.17 1.3334,1.16h3.0666c0.6605,0.01 1.2277,-0.48 1.3334,-1.16l0.2266,-1.38c0.139,-0.85 0.6631,-1.6 1.4134,-1.99c0.3433,-0.17 0.6732,-0.37 0.9866,-0.6c0.7071,-0.46 1.5865,-0.56 2.3734,-0.26l1.3333,0.5c0.5821,0.19 1.2135,-0.06 1.5333,-0.59l1.5467,-2.76c0.3214,-0.58 0.1861,-1.32 -0.32,-1.75zM16,20.1301c-2.2092,0 -4,-1.85 -4,-4.13c0,-2.28 1.7908,-4.13 4,-4.13c2.2091,0 4,1.85 4,4.13c0,1.1 -0.4214,2.15 -1.1716,2.92c-0.7501,0.78 -1.7675,1.21 -2.8284,1.21z" fill="currentColor" />
+                  </g>
+                </svg>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="homework-dashboard-container">
+          <div class="dashboard-container">
+            <div class="task-summary-container1">
+              <div class="task-summary-container">
+                <p class="homework-title">Домашние задания</p>
+                <p class="homework-title-text-style">Тесты</p>
+              </div>
+              <div class="task-summary-widget">
+                <div class="task-stats-container">
+                  <div class="task-summary-container">
+                    <p class="total-tasks-text-style">367</p>
+                    <p class="total-tasks-text-style1">Всего заданий</p>
+                  </div>
+                  <div class="task-summary-container">
+                    <p class="test-count-display-style">45</p>
+                    <p class="total-tests-label">Всего тестов</p>
+                  </div>
+                </div>
+                <div class="vertical-spacing-container">
+                  <div class="parent-container-flex-row">
+                    <div class="horizontal-flex-container">
+                      <div class="card-container3"></div>
+                      <div class="card-container1"></div>
+                    </div>
+                    <div class="header-button"></div>
+                  </div>
+                  <div class="flex-container-with-top-margin">
+                    <div class="horizontal-flex-container">
+                      <div class="card-container3"></div>
+                      <div class="card-container1"></div>
+                    </div>
+                    <div class="horizontal-flex-container1">
+                      <div class="inner-content-wrapper">
+                        <div class="card-container2"></div>
+                      </div>
+                      <div class="nested-content-wrapper">
+                        <div class="card-container2"></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="calendar-container">
+              <div class="calendar-container1">
+                <div class="calendar-header-container">
+                  <div class="flex-row-with-icon">
+                    <p class="monthly-heading-text-style">June 2021</p>
+                    <div class="svg-container1">
+                      <svg viewBox="0 0 6.6904 11.4385" x="0" y="0" fill="none" xmlns="http://www.w3.org/2000/svg"><path id="SF Icon / chevron.forward" d="M6.69,5.7192c0,-0.2729 -0.09,-0.4951 -0.32,-0.7046l-4.87,-4.7607c-0.16,-0.1714 -0.36,-0.2539 -0.61,-0.2539c-0.49,0 -0.89,0.3935 -0.89,0.8823c0,0.2412 0.1,0.4634 0.28,0.6411l4.32,4.1895l-4.32,4.2021c-0.18,0.1714 -0.28,0.3936 -0.28,0.6411c0,0.4888 0.4,0.8823 0.89,0.8823c0.24,0 0.45,-0.0825 0.61,-0.2539l4.87,-4.7607c0.23,-0.2095 0.32,-0.438 0.32,-0.7046z" fill="currentColor" xmlns="http://www.w3.org/2000/svg" /></svg>
+                    </div>
+                  </div>
+                  <div class="flex-row-container">
+                    <div class="svg-container2">
+                      <svg viewBox="0 0 9.9707 17.3242" x="0" y="0" fill="none" xmlns="http://www.w3.org/2000/svg"><path id="SF Symbol / chevron.backward" d="M0,8.6621c0,0.3418 0.13,0.6348 0.4,0.8887l7.6,7.4414c0.21,0.2148 0.49,0.332 0.81,0.332c0.64,0 1.16,-0.5078 1.16,-1.1621c0,-0.3223 -0.14,-0.6055 -0.35,-0.8301l-6.85,-6.6699l6.85,-6.6699c0.21,-0.2246 0.35,-0.5176 0.35,-0.8301c0,-0.6543 -0.52,-1.1621 -1.16,-1.1621c-0.32,0 -0.6,0.1172 -0.81,0.332l-7.6,7.4317c-0.27,0.2636 -0.4,0.5566 -0.4,0.8984z" fill="currentColor" xmlns="http://www.w3.org/2000/svg" /></svg>
+                    </div>
+                    <div class="svg-container2">
+                      <svg viewBox="0 0 9.9707 17.3242" x="0" y="0" fill="none" xmlns="http://www.w3.org/2000/svg"><path id="SF Symbol / chevron.forward" d="M9.9707,8.6621c-0.01,-0.3418 -0.14,-0.6348 -0.4,-0.8984l-7.6,-7.4317c-0.22,-0.2148 -0.49,-0.332 -0.81,-0.332c-0.65,0 -1.16,0.5078 -1.16,1.1621c0,0.3125 0.13,0.6055 0.35,0.8301l6.84,6.6699l-6.84,6.6699c-0.22,0.2246 -0.35,0.5078 -0.35,0.8301c0,0.6543 0.51,1.1621 1.16,1.1621c0.31,0 0.59,-0.1172 0.81,-0.332l7.6,-7.4414c0.27,-0.2539 0.4,-0.5469 0.4,-0.8887z" fill="currentColor" xmlns="http://www.w3.org/2000/svg" /></svg>
+                    </div>
+                  </div>
+                </div>
+                <div class="calendar-weekdays-container">
+                  <div class="day-of-week-container">
+                    <p class="day-of-week-label-style">SUN</p>
+                  </div>
+                  <div class="vertical-align-center-bottom">
+                    <p class="day-of-week-label-style">MON</p>
+                  </div>
+                  <div class="flex-center-column">
+                    <p class="day-of-week-label-style">TUE</p>
+                  </div>
+                  <div class="flex-center-column">
+                    <p class="day-of-week-label-style">WED</p>
+                  </div>
+                  <div class="flex-center-column">
+                    <p class="day-of-week-label-style">THU</p>
+                  </div>
+                  <div class="flex-center-column">
+                    <p class="day-of-week-label-style">FRI</p>
+                  </div>
+                  <div class="flex-center-column">
+                    <p class="day-of-week-label-style">SAT</p>
+                  </div>
+                </div>
+                <div class="vertical-number-grid-container">
+                  <div class="horizontal-flex-container2">
+                    <div class="grid-item-with-text"></div>
+                    <div class="grid-item-with-text"></div>
+                    <span class="number-square-container">1</span><span class="number-square-container">2</span><span class="number-square-container">3</span><span class="number-square-container">4</span><span class="number-square-container">5</span>
+                  </div>
+                  <div class="horizontal-number-list"><span class="number-square-container">6</span><span class="highlighted-circle-badge">7</span><span class="number-square-container">8</span><span class="number-square-container">9</span><span class="number-square-container">10</span><span class="number-square-container">11</span><span class="number-square-container">12</span></div>
+                  <div class="horizontal-number-list"><span class="number-square-container">13</span><span class="number-square-container">14</span><span class="number-square-container">15</span><span class="number-square-container">16</span><span class="number-square-container">17</span><span class="number-square-container">18</span><span class="number-square-container">19</span></div>
+                  <div class="horizontal-number-list"><span class="number-square-container">20</span><span class="number-square-container">21</span><span class="number-square-container">22</span><span class="number-square-container">23</span><span class="number-square-container">24</span><span class="number-square-container">25</span><span class="number-square-container">26</span></div>
+                </div>
+              </div>
+              <div class="flex-date-container">
+                <span class="number-square-container">27</span><span class="number-square-container">28</span><span class="number-square-container">29</span><span class="number-square-container">30</span>
+                <div class="grid-item-with-text"></div>
+                <div class="grid-item-with-text"></div>
+                <div class="grid-item-with-text"></div>
+              </div>
+            </div>
+          </div>
+          <div class="vertical-align-bottom-flex-container">
+            <img src="assets/image_11c65e61.png" class="image-container1" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
